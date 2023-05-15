@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gerador de Senhas</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">Gerador de Senhas</h1>
+		<form method="POST" action="/gerar_senha">
+			<div class="form-group">
+				<label for="tamanho">Tamanho da senha:</label>
+				<input type="number" name="tamanho" id="tamanho" class="form-control" min="1" max="100" required>
+			</div>
+
+			<div class="form-group">
+				<label for="tipo">Tipo de caracteres:</label>
+				<select name="tipo" id="tipo" class="form-control">
+					<option value="1">Somente letras minúsculas</option>
+					<option value="2">Letras maiúsculas e minúsculas</option>
+					<option value="3">Letras e números</option>
+					<option value="4">Letras, números e caracteres especiais</option>
+				</select>
+			</div>
+
+			<div class="text-center">
+				<input type="submit" value="Gerar senha" class="btn btn-primary">
+			</div>
+		</form>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
